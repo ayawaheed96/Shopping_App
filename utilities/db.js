@@ -20,13 +20,13 @@ async function connect() {
 }
 async function disconnect() {
   if (connection.isConnected) {
-    if (process.env.NODE_ENV == "production") {
-      //we do not need to connect in the production mode  only dev mode
-      await mongoose.disconnect();
-      connection.isConnected = false;
-    } else {
+    // if (process.env.NODE_ENV == "production") {
+    //   //we do not need to connect in the production mode  only dev mode
+    //   await mongoose.disconnect();
+    //   connection.isConnected = false;
+    // } else {
       console.log("Not disconnected");
-    }
+    // }
   }
 }
 const db = { connect, disconnect };
