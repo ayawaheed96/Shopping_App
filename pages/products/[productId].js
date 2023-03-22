@@ -91,7 +91,7 @@ export async function getStaticPaths(){
     const response =await fetch("https://asos2.p.rapidapi.com/products/v2/list?store=US&offset=0&categoryId=4209&limit=48&country=US&sort=freshness&currency=USD&sizeSchema=US&lang=en-US", options);
     const data=await response.json();
     const {products}=data;
-    const productsList=products.slice(0,9);
+    const productsList=products.slice(0,3);
     const paths=productsList.map(product =>{
         return {
             params:{productId:`${product.id}`}
